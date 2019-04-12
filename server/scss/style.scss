@@ -19,10 +19,12 @@ button {
   display: block;
   width: 100%;
   border: none;
-  padding: 10px;
+  padding: 1.1rem;
   background-color: tomato;
+  font-size: 1em;
   color: #fff;
 }
+
 #messages {
   position: relative;
   list-style-type: none;
