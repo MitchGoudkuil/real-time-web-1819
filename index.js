@@ -58,8 +58,10 @@ io.on("connection", function(socket) {
       amsterdam: "Amsie",
       meisje: "kech",
       de: "het",
+      De: "Het",
       geld: "zaaf",
       een: "wahet",
+      Een: "Wahet",
       het: "de",
       billen: "assr",
       schoenen: "patas",
@@ -145,7 +147,7 @@ io.on("connection", function(socket) {
     for (var key in filter) {
       if (temp.message.includes(key)) {
         temp.message = temp.message.replace(
-          new RegExp("\\b" + key + "\\b"),
+          new RegExp("\\b" + key + "\\b", "g"),
           filter[key]
         );
       }
