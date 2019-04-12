@@ -72,7 +72,10 @@ io.on("connection", function(socket) {
       heineken: "paarden pis",
       bier: "Grey goose",
       biertje: "Grey goose",
+      Bier: "Grey goose",
+      Biertje: "Grey goose",
       wijn: "Moët",
+      Wijn: "Moët",
       wijntje: "Moëtie",
       drank: "drankie",
       drankje: "drankie",
@@ -82,6 +85,8 @@ io.on("connection", function(socket) {
       Hoi: "ewa G",
       hey: "ewa G",
       hoi: "ewa G",
+      hallo: "ewa G",
+      Hallo: "Ewa G",
       huis: "osso",
       neus: "nosso",
       pistool: "Ak47",
@@ -132,7 +137,9 @@ io.on("connection", function(socket) {
       hahahaha: "jajajaja",
       waterpistool: "waterpipa",
       niks: "welloe",
-      Niks: "Welloe"
+      Niks: "Welloe",
+      klap: "klappoe",
+      Klap: "klappoe"
     };
 
     for (var key in filter) {
