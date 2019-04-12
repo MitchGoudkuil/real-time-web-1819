@@ -64,7 +64,6 @@ io.on("connection", function(socket) {
       billen: "assr",
       schoenen: "patas",
       dennis: "fakka je boy",
-      ik: "moi",
       mitch: "mitta",
       guus: "gussa",
       moeder: "madre",
@@ -108,7 +107,10 @@ io.on("connection", function(socket) {
       sam: "Sammr",
       eva: "Eef",
       daan: "Danno",
-      janno: "je boy Janneau"
+      janno: "je boy Janneau",
+      steken: "djoeken",
+      steek: "djoek",
+      arash: "arasha man"
     };
 
     for (var key in filter) {
