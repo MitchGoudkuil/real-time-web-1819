@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "sass": "node_modules/.bin/node-sass --include-path scss server/scss/style.scss server/public/css/style.css",
     "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass",
     "server": "node_modules/.bin/nodemon index.js",
