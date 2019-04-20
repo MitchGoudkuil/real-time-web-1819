@@ -15,7 +15,25 @@ De twitter API heeft een rate limit van 15requests per window maar het fijne aan
 
 De data die opgehaald wordt zijn alle tweets waarin de specifieke mumble rappers genoemd worden en deze worden op de racetrack getoond doormiddel van D3.
 
-#### Schets van meest belangrijke scherm met interactiemogelijkheden erbij
+###### API key
+
+Doormiddel van het aanvragen van een twitter developer account is het verkrijgen van de Api Key mogelijk.
+
+###### Authorization
+
+Doormiddel van Oauth wordt er toegang vergeven aan de twitter API.
+
+#### Schets van meest belangrijke scherm met interactiemogelijkheden erbij.
+
+Ik heb mijn app gelijk al deels gestyled in sketch.
+| ![img](./server/public/img/chat.png) | De chat in de applicatie zit verborgen maar is ten alle tijden open en dicht te toggelen. |
+|--- |--- |
+
+![img](./server/public/img/track.png)
+Doormiddel van 3d verschuiven de rappers over de "baan"/grafiek heen tot 1 van de rappers bij de 100 tweets is. Hierna wordt het geld bij elkaar opgeteld.
+
+![img](./server/public/img/board.png)
+Op het scoreboard staat welke rapper het meest gewonnen heeft en om hoeveel tweets het ging.
 
 #### Data life cycle
 
