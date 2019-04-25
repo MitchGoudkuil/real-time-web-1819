@@ -55,6 +55,16 @@ h6 {
   letter-spacing: 1px;
 }
 
+.test {
+  position: absolute;
+  display: block;
+  width: auto;
+  left: 50%;
+  background-color: tomato;
+  color: #fff;
+  z-index: 10000;
+}
+
 .content {
   width: 100%;
   height: 100vh;
@@ -99,7 +109,41 @@ h6 {
   }
 
   &__track {
-    background-color: var(--lightgrey);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 2rem;
+    // background-color: var(--lightgrey);
+    background-image: url(/img/grass.jpg);
+    background-size: 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  &__lane {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+
+    div {
+      width: 10%;
+      text-align: center;
+    }
+    img {
+      width: 40px;
+    }
+  }
+
+  &__finish {
+    position: absolute;
+    width: 8px;
+    opacity: 0.1;
+    height: 100%;
+    background-color: #fff;
+    right: 3rem;
+    top: 0;
   }
 
   &__tweets {
@@ -156,9 +200,11 @@ h6 {
 
   &__rapper {
     text-align: center;
+    cursor: pointer;
     img {
       display: block;
       margin: 0 auto;
+      width: 55px;
     }
   }
 
@@ -323,6 +369,12 @@ h6 {
   align-items: center;
   justify-content: center;
   z-index: 100;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .money {
