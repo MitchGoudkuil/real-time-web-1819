@@ -38,7 +38,13 @@ let twentyoneLength = "";
 let tentacionLength = "";
 let sixnineLength = "";
 
-const socket = io();
+let lilpumpInner = ``;
+let cardiBInner = ``;
+let sixnineInner = ``;
+let tentacionInner = ``;
+let twentyoneInner = ``;
+
+const socket = io({ transports: ["websocket"], upgrade: false });
 
 let startMoney = 1000;
 moneyLabel.innerHTML = "$" + startMoney.toString();
@@ -109,7 +115,7 @@ socket.on("gamble", function(data) {});
 
 socket.on("timer", function(data) {
   timerblock.innerHTML = data;
-  if (data === 5) {
+  if (data === 30) {
     timerblock.innerHTML = "The game has started";
     items.forEach(function(e) {
       e.classList.add("disabled");
@@ -128,9 +134,33 @@ socket.on("racing", function(data) {
   twentyoneLength = data.twentyone.length;
   tentacionLength = data.tentacion.length;
   sixnineLength = data.sixnine.length;
-  let lilpumpInner = `
+  lilpumpInner = `
   <div style="transition: 0.4s; transform: translateX(${pumpLength}00%)">
     <img src="./img/lilpump.png" alt="">
+  </div>
+  `;
+
+  cardiBInner = `
+  <div style="transition: 0.4s; transform: translateX(${cardiBLength}00%)">
+    <img src="./img/cardib.png" alt="">
+  </div>
+  `;
+
+  sixnineInner = `
+  <div style="transition: 0.4s; transform: translateX(${sixnineLength}00%)">
+    <img src="./img/sixnine.png" alt="">
+  </div>
+  `;
+
+  tentacionInner = `
+  <div style="transition: 0.4s; transform: translateX(${tentacionLength}00%)">
+    <img src="./img/tentacion.png" alt="">
+  </div>
+  `;
+
+  twentyoneInner = `
+  <div style="transition: 0.4s; transform: translateX(${twentyoneLength}00%)">
+    <img src="./img/21.png" alt="">
   </div>
   `;
 
@@ -139,30 +169,6 @@ socket.on("racing", function(data) {
   tentacionTweet.innerHTML = tentacionLength;
   savageTweet.innerHTML = twentyoneLength;
   cardibTweet.innerHTML = cardiBLength;
-
-  let cardiBInner = `
-  <div style="transition: 0.4s; transform: translateX(${cardiBLength}00%)">
-    <img src="./img/cardib.png" alt="">
-  </div>
-  `;
-
-  let sixnineInner = `
-  <div style="transition: 0.4s; transform: translateX(${sixnineLength}00%)">
-    <img src="./img/sixnine.png" alt="">
-  </div>
-  `;
-
-  let tentacionInner = `
-  <div style="transition: 0.4s; transform: translateX(${tentacionLength}00%)">
-    <img src="./img/tentacion.png" alt="">
-  </div>
-  `;
-
-  let twentyoneInner = `
-  <div style="transition: 0.4s; transform: translateX(${twentyoneLength}00%)">
-    <img src="./img/21.png" alt="">
-  </div>
-  `;
 
   lilpumpLane.innerHTML = lilpumpInner;
   cardiBLane.innerHTML = cardiBInner;
@@ -185,6 +191,7 @@ socket.on("racing", function(data) {
       { name: "CardiB", length: cardiBLength }
     ];
     socket.emit("winner", winnerArr);
+
     socket.emit("restart");
   }
 });
@@ -203,11 +210,35 @@ socket.on("winner", function(data) {
 });
 
 socket.on("restart", function() {
-  pumpLength = 0;
-  cardiBLength = 0;
-  twentyoneLength = 0;
-  tentacionLength = 0;
-  sixnineLength = 0;
+  lilpumpInner = `
+  <div style="transition: 0.4s; transform: translateX(0%)">
+    <img src="./img/lilpump.png" alt="">
+  </div>
+  `;
+
+  cardiBInner = `
+  <div style="transition: 0.4s; transform: translateX(0%)">
+    <img src="./img/cardib.png" alt="">
+  </div>
+  `;
+
+  sixnineInner = `
+  <div style="transition: 0.4s; transform: translateX(0%)">
+    <img src="./img/sixnine.png" alt="">
+  </div>
+  `;
+
+  tentacionInner = `
+  <div style="transition: 0.4s; transform: translateX(0%)">
+    <img src="./img/tentacion.png" alt="">
+  </div>
+  `;
+
+  twentyoneInner = `
+  <div style="transition: 0.4s; transform: translateX(0%)">
+    <img src="./img/21.png" alt="">
+  </div>
+  `;
 });
 
 socket.on("users", function(data) {

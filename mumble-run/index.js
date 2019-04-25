@@ -5,6 +5,7 @@ const hbs = require("express-handlebars");
 const http = require("http").Server(app);
 const io = require("socket.io")(http, { pingInterval: 500 });
 const port = process.env.PORT || 3000;
+io.set("transports", ["websocket"]);
 
 let pumpArray = [];
 let cardiBArray = [];
@@ -13,7 +14,7 @@ let tentacionArray = [];
 let twentyoneArray = [];
 let futureArray = [];
 let userIDs = [];
-let timer = 5;
+let timer = 30;
 
 let gambleArr = [];
 
@@ -65,7 +66,7 @@ function startgame() {
       console.log(timer);
       if (timer === 0) {
         clearInterval(mainInterval);
-        timer = 5;
+        timer = 30;
         pumpArray = [];
         sixnineArray = [];
         cardiBArray = [];
@@ -114,7 +115,7 @@ io.on("connection", function(socket) {
   });
 
   socket.on("restart", function() {
-    timer = 5;
+    timer = 30;
     startgame();
     io.emit("restart");
     io.emit("racing");
