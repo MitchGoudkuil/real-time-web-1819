@@ -25,7 +25,7 @@ const config = require("./config");
 const client = new TwitterStreamChannels(config);
 
 const channels = {
-  lilpump: ["lilpump", "#lilpump", "@lilpump", "blastoise", "basket"],
+  lilpump: ["lilpump", "#lilpump", "@lilpump", "blastoise", "chair"],
   cardib: ["#cardiB", "cardib", "cardiB", "@iamcardib"],
   sixnine: ["6ix9ine", "sixnine", "@TheRiskOffic", "#6ix9ine", "table"],
   tentacion: [
@@ -35,7 +35,7 @@ const channels = {
     "laptop",
     "electric"
   ],
-  twentyone: ["21savage", "@21savage", "#21savage", "dennis"]
+  twentyone: ["21savage", "@21savage", "#21savage"]
 };
 
 let stream = client.streamChannels({ track: channels });
